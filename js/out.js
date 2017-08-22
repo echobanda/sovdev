@@ -33,6 +33,9 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -60,20 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(1);
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -87,7 +81,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -104,6 +98,24 @@ if(false) {
 }
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(0);
+
+var button = $('.burger').find(".button");
+console.log(button);
+
+button.on('click', function () {
+  $('.sovdev').slideToggle(function () {
+    $('.sovdev').css("visibility", "visible");
+  });
+});
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -112,7 +124,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #800080;\n  color: #ffffff;\n  font-size: 5em; }\n\n.flex-container {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  .flex-container .circle {\n    width: 300px;\n    height: 300px;\n    border-radius: 100%;\n    border: 2px solid #ffffff; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'cyrillic_pixel-7regular';\n  src: url(" + __webpack_require__(5) + ") format(\"woff2\"), url(" + __webpack_require__(4) + ") format(\"woff\");\n  font-weight: normal;\n  font-style: normal; }\n\nbody {\n  background-color: #363636;\n  color: #ffffff;\n  font-family: 'Share Tech', sans-serif;\n  height: 100%;\n  width: 100%;\n  margin: 0 auto;\n  box-sizing: border-box; }\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\na {\n  text-decoration: none;\n  color: #ffffff; }\n\na:hover {\n  color: #d84d3a; }\n\nul {\n  list-style: none;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center; }\n\nli {\n  margin-left: 40px;\n  margin-top: 20px; }\n\nh1,\nh2,\nh3 {\n  letter-spacing: 5px; }\n\n.flex-container {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: flex-start;\n  width: 100%; }\n  .flex-container header {\n    width: 100%;\n    height: 655px;\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    justify-content: flex-start; }\n    .flex-container header aside {\n      display: flex;\n      justify-content: center;\n      align-items: flex-start;\n      flex-direction: column;\n      width: 50%;\n      background-image: url(" + __webpack_require__(8) + ");\n      background-position: center;\n      background-color: #00385d;\n      overflow: hidden;\n      height: 655px; }\n      .flex-container header aside .logo {\n        font-size: 10em;\n        padding-left: 10px;\n        font-family: 'cyrillic_pixel-7regular', sans-serif; }\n      .flex-container header aside .under {\n        content: \"\";\n        width: 150px;\n        height: 6px;\n        background-color: #ffffff;\n        margin-left: 10px; }\n      .flex-container header aside .text {\n        margin-top: 10px;\n        font-size: 1.05em;\n        padding-left: 10px; }\n    .flex-container header .home {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: flex-start;\n      width: 50%;\n      height: 100%;\n      background-color: #3d485d;\n      color: #e5e5e5;\n      overflow: hidden;\n      padding-left: 10px;\n      padding-right: 10px;\n      background-image: url(" + __webpack_require__(9) + ");\n      background-position: left;\n      background-repeat: no-repeat; }\n      .flex-container header .home nav {\n        font-size: 1.2em;\n        font-weight: bold; }\n  .flex-container section {\n    height: 100%;\n    width: 100%; }\n    .flex-container section .about {\n      background-color: #f8f8f8;\n      background-image: url(" + __webpack_require__(10) + ");\n      background-position: left;\n      background-repeat: no-repeat;\n      height: 650px;\n      color: #363636;\n      display: flex;\n      flex-direction: row; }\n      .flex-container section .about .about-left {\n        width: 50%; }\n      .flex-container section .about .about-right {\n        padding-top: 50px;\n        padding-right: 50px;\n        margin-bottom: 10px;\n        width: 50%;\n        font-size: 1.2em;\n        text-align: justify;\n        display: flex;\n        flex-direction: column;\n        line-height: 50px; }\n        .flex-container section .about .about-right h3,\n        .flex-container section .about .about-right span {\n          margin-bottom: 10px; }\n        .flex-container section .about .about-right .under {\n          content: \"\";\n          width: 135px;\n          height: 6px;\n          background-color: #d84d3a; }\n    .flex-container section .experience {\n      background-color: #ffffff;\n      height: 450px;\n      color: #363636;\n      display: flex;\n      flex-direction: row; }\n      .flex-container section .experience .experience-left {\n        padding-top: 50px;\n        padding-left: 50px;\n        padding-right: 40px;\n        margin-bottom: 10px;\n        width: 50%;\n        font-size: 1.2em;\n        text-align: justify;\n        display: flex;\n        flex-direction: column;\n        line-height: 50px; }\n        .flex-container section .experience .experience-left h3,\n        .flex-container section .experience .experience-left span {\n          margin-bottom: 10px; }\n        .flex-container section .experience .experience-left .under {\n          content: \"\";\n          width: 135px;\n          height: 6px;\n          background-color: #d84d3a; }\n      .flex-container section .experience .experience-right {\n        width: 50%;\n        display: flex;\n        flex-direction: row;\n        flex-wrap: wrap;\n        justify-content: center;\n        align-items: center;\n        padding-left: 50px; }\n        .flex-container section .experience .experience-right div {\n          display: flex;\n          flex-direction: column;\n          justify-content: space-around;\n          align-items: center;\n          flex-basis: 50%; }\n          .flex-container section .experience .experience-right div img {\n            width: 30%;\n            height: 30%;\n            margin-bottom: 20px; }\n    .flex-container section .works {\n      background-color: #28272f;\n      width: 100%;\n      height: 600px;\n      display: flex;\n      align-items: center;\n      flex-direction: column;\n      padding-left: 50px;\n      padding-right: 50px;\n      font-size: 1.2em;\n      line-height: 50px;\n      text-align: justify; }\n      .flex-container section .works h2 {\n        margin-bottom: 10px;\n        margin-top: 30px; }\n      .flex-container section .works h3,\n      .flex-container section .works span {\n        margin-bottom: 20px; }\n      .flex-container section .works .under {\n        content: \"\";\n        width: 135px;\n        height: 6px;\n        background-color: #d84d3a; }\n    .flex-container section .services {\n      background-color: #ffffff;\n      height: 450px;\n      color: #363636;\n      display: flex;\n      flex-direction: row; }\n      .flex-container section .services .services-right {\n        padding-top: 50px;\n        padding-left: 50px;\n        padding-right: 40px;\n        margin-bottom: 10px;\n        width: 50%;\n        font-size: 1.2em;\n        text-align: justify;\n        display: flex;\n        flex-direction: column;\n        line-height: 50px; }\n        .flex-container section .services .services-right h3,\n        .flex-container section .services .services-right span {\n          margin-bottom: 10px; }\n        .flex-container section .services .services-right .under {\n          content: \"\";\n          width: 135px;\n          height: 6px;\n          background-color: #d84d3a; }\n      .flex-container section .services .services-left {\n        width: 50%;\n        display: flex;\n        flex-direction: row;\n        flex-wrap: wrap;\n        justify-content: center;\n        align-items: center;\n        padding-left: 50px; }\n        .flex-container section .services .services-left div {\n          display: flex;\n          flex-direction: column;\n          justify-content: space-around;\n          align-items: center;\n          flex-basis: 50%; }\n          .flex-container section .services .services-left div img {\n            width: 30%;\n            height: 30%;\n            margin-bottom: 20px; }\n  .flex-container footer {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n    height: 200px;\n    background-color: #f8f8f8;\n    color: #28272f;\n    padding-left: 40px;\n    padding-right: 40px; }\n    .flex-container footer a {\n      color: #00385d;\n      font-family: 'Special Elite', sans-serif; }\n    .flex-container footer h2 {\n      font-family: 'cyrillic_pixel-7regular', sans-serif;\n      margin-bottom: 10px; }\n    .flex-container footer h3,\n    .flex-container footer p {\n      margin-bottom: 10px; }\n    .flex-container footer span {\n      font-weight: bold; }\n    .flex-container footer div {\n      flex-basis: 25%;\n      padding: 10px; }\n", ""]);
 
 // exports
 
@@ -203,6 +215,18 @@ function toComment(sourceMap) {
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "6543ebf556eb579c722ec828f2006236.woff";
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "159917044e5367699dd1910faa265a12.woff2";
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -246,7 +270,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(5);
+var	fixUrls = __webpack_require__(7);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -559,7 +583,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports) {
 
 
@@ -652,6 +676,24 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "d5c127e084f1908b25b695fb2905daec.png";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "8dda618b2f0b720c7b5c2a643483bb39.png";
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "1aea4d969982eb201f3745125bebe0c9.png";
 
 /***/ })
 /******/ ]);
