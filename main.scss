@@ -87,10 +87,10 @@ h3 {
       background-color: $primary;
       overflow: hidden;
       height: 655px;
+      padding-left: 150px;
 
       .logo {
         font-size: 10em;
-        padding-left: 10px;
         font-family: 'cyrillic_pixel-7regular', sans-serif;
       }
 
@@ -99,14 +99,14 @@ h3 {
         width: 150px;
         height: 6px;
         background-color: $white;
-        margin-left: 10px;
       }
 
       .text {
         margin-top: 10px;
         font-size: 1.05em;
-        padding-left: 10px;
       }
+
+
     }
 
     .home {
@@ -237,7 +237,7 @@ h3 {
     .works {
       background-color: $black3;
       width: 100%;
-      height: 600px;
+      height: 655px;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -307,6 +307,7 @@ h3 {
         justify-content: space-between;
         align-items: center;
         padding-left: 50px;
+        padding-right: 50px;
 
         img {
           width: 20%;
@@ -368,5 +369,26 @@ h3 {
       padding: 10px;
       text-align: center;
     }
+  }
+  // return styles
+  .return-to-top {
+    position: fixed;
+    bottom: 2%;
+    right: 48.5%;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    display: none;
+  }
+
+  .return-to-top i {
+    color: $red;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 2em;
   }
 }
